@@ -18,6 +18,7 @@
     "@rebass/grid": "^6.0.0-7",
     "facepaint": "^1.2.1",
     "jwt-decode": "^2.2.0",
+    "ky": "^0.7.0",
     "mobx": "^5.8.0",
     "mobx-react": "^5.4.3",
     "mobx-state-tree": "^3.10.0",
@@ -81,7 +82,7 @@
     "moduleNameMapper": {
       "^Components$": "<rootDir>/src/components/$1",
       "^Pages$": "<rootDir>/src/pages/$1",
-      "^System[\/](.+)$": "<rootDir>/src/styled/system/$1",
+      "^System[/](.+)$": "<rootDir>/src/styled/system/$1",
       "^Styled$": "<rootDir>/src/styled/$1",
       "^Stores$": "<rootDir>/src/stores/$1",
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js"

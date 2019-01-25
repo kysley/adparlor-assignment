@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
-import { Link } from 'react-router-dom'
 
 /**
  * This is something I would consider putting into styled/Grids,
@@ -32,13 +31,14 @@ const SectionContainer = styled.div`
  * fakeActive is a quick (static) hack just for the sake of the assignment!
  * this is also the source of the error in console.
  */
-const Section = styled(Link)`
+const Section = styled.a`
   font-family: Theinhardt-Bold;
   font-size: 1rem;
   text-transform: uppercase;
   grid-area: section;
   text-decoration: none;
   margin-right: 2em;
+  cursor: pointer;
 
   ${props => props.fakeActive ? 'color: #FFFFFF' : 'color: rgb(129, 180, 196)'};
 

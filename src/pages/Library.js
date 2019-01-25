@@ -26,6 +26,7 @@ class Library extends React.Component {
               {blueprintStore.blueprints.map(bp => (
                 <Card key={bp.id} info={bp} />
               ))}
+              <Card empty />
             </>
           )
           : (

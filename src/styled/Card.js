@@ -17,8 +17,9 @@ const defaultCardStyles = css`
 `
 
 const emptyCardStyles = css`
-  border: 1px dotted #c9c9c9;
-  padding: 5em;
+  border: 1px dashed #c9c9c9;
+  justify-content: center;
+  align-items: center;
 `
 
 const EmptyCardText = styled.h3`

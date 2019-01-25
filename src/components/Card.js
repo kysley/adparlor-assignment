@@ -1,5 +1,12 @@
 import React from 'react'
 
+/**
+ * Card component that is composed of Styled/Card components
+ * We use a ternary to conditionally render the empty card to try
+ * to keep things as reusable as possible.
+ * -- Another way to do this would be style composition
+ */
+
 import CardWrapper,
 {
   CardImage,

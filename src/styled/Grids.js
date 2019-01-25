@@ -1,6 +1,11 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
+/**
+ * Basic Grids/Containers for the app that are aimed to be
+ * potentially reusable
+ */
+
 const containerStyles = css`
   display: flex;
   flex-direction: column;

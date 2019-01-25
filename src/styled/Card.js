@@ -1,6 +1,11 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
+/**
+ * Basic card used for displaying picture & meta information.
+ * Uses some style composition.
+ */
+
 const sharedCardStyles = css`
   height: 230px;
   border-radius: 6px;
@@ -57,7 +62,6 @@ const CardName = styled.h3`
 const CardMeta = styled.span`
   font-size: 1rem;
 `
-
 
 export default CardWrapper
 

@@ -1,5 +1,9 @@
 import styled from '@emotion/styled'
 
+/**
+ * Basic primitive that I took from my own design lib
+ */
+
 const AvatarBox = styled.div`
   display: flex;
   justify-content: center;

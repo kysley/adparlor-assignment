@@ -1,5 +1,9 @@
 import React from 'react'
 
+/**
+ * Icon primitive that I nabbed from my own design lib
+ */
+
 function getDefaultProps(width, height) {
   return {
     'aria-hidden': true,

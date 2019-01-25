@@ -24,6 +24,11 @@ import {
 import AvatarBox from 'Styled/Avatar'
 import { OutlineButton } from 'Styled/Buttons'
 
+/**
+ * Fairly close recreation of the Blueprint Header.
+ * Some assumptions were made.
+ */
+
 const Header = () => (
   <HeaderGrid>
     <SectionContainer>

@@ -5,6 +5,10 @@ import { inject, observer } from 'mobx-react'
 import Card from 'Components/Card'
 import { BlueprintGrid } from 'Styled/Grids'
 
+/**
+ * View page for the URL /library
+ */
+
 @inject('blueprintStore')
 @observer
 class Library extends React.Component {

@@ -98,13 +98,25 @@ const Tab = styled.div`
   text-transform: uppercase;
   font-family: Theinhardt-Bold;
   cursor: pointer;
+  margin-right: 2em;
+  position: relative;
 
   ${props => props.fakeActive ? 'color: #FFFFFF' : 'color: rgb(129, 180, 196)'};
+  ${props => props.fakeActive ? `
+    ::after {
+      display: block;
+      content: '';
+      height: 5px;
+      width: 100%;
+      background-color: rgb(250, 55, 103);
+      position: absolute;
+      bottom: 0;
+    }
+  ` : null};
 
   :hover {
     color: #FFFFFF;
   }
-  margin-right: 2em;
 
   >svg {
     margin-right: .2em;

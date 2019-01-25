@@ -3,7 +3,6 @@ import { css } from '@emotion/core'
 
 const sharedCardStyles = css`
   height: 230px;
-  width: 352px;
   border-radius: 6px;
   display: flex;
   flex-direction: column;

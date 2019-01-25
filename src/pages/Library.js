@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { inject, observer } from 'mobx-react'
 
 import Card from 'Components/Card'
+import { BlueprintGrid } from 'Styled/Grids'
 
 @inject('blueprintStore')
 @observer
@@ -13,13 +14,12 @@ class Library extends React.Component {
     const { blueprintStore } = this.props
 
     blueprintStore.grabBlueprints()
-    console.log(blueprintStore)
   }
 
   render() {
     const { blueprintStore } = this.props
     return (
-      <div>
+      <BlueprintGrid>
         {!blueprintStore.isLoading
           ? (
             <>
@@ -32,7 +32,7 @@ class Library extends React.Component {
             <span>Loading...</span>
           )
         }
-      </div>
+      </BlueprintGrid>
     )
   }
 }

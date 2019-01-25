@@ -8,7 +8,6 @@ import Routes from '../hot-routes'
 /* Import Other  */
 import TR from '../assets/fonts/Theinhardt-Regular.woff'
 import TB from '../assets/fonts/Theinhardt-Bold.woff'
-
 /* Import Stores Start */
 import BlueprintStore from 'Stores/Blueprint'
 
@@ -37,13 +36,9 @@ const global = css`
     margin: 0;
     padding: 0;
     min-width: 100vw;
-    max-width: 100vw;
     min-height: 100vh;
-    max-height: 100vh;
     overflow-x: hidden;
     background-color: #f3f6f8;
-    color: #0F131A;
-    /* background-color: #f6f8fa; */
   }
 `
 

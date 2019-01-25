@@ -1,20 +1,35 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
-const defaultCardStyles = css`
+const sharedCardStyles = css`
   height: 230px;
   width: 352px;
-  border: 1px solid #e9e9e9;
   border-radius: 6px;
-  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   background-color: #fff;
   color: #666666;
 `
 
+const defaultCardStyles = css`
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9e9e9;
+`
+
+const emptyCardStyles = css`
+  border: 1px dotted #c9c9c9;
+  padding: 5em;
+`
+
+const EmptyCardText = styled.h3`
+  font-family: Theinhardt-Bold;
+  font-size: 1rem;
+  margin: 0;
+`
+
 const CardWrapper = styled.div`
-  ${defaultCardStyles};
+  ${sharedCardStyles};
+  ${p => p.empty ? css`${emptyCardStyles}` : css`${defaultCardStyles}`};
 `
 
 const CardMetaWrapper = styled.div`
@@ -28,6 +43,7 @@ const CardMetaWrapper = styled.div`
 const CardImage = styled.img`
   width: 100%;
   height: 70%;
+  border-radius: 6px 6px 0 0;
   background-repeat: no-repeat;
   background-size: contain;
 `
@@ -50,4 +66,5 @@ export {
   CardImage,
   CardName,
   CardMeta,
+  EmptyCardText,
 }

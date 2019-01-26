@@ -1,7 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { Provider } from 'mobx-react'
 import { Global, css } from '@emotion/core'
+import { Provider } from 'react-redux'
+import { createStore, compose, applyMiddleware } from 'redux'
+import createSagaMiddleware from 'redux-saga'
 
 /* Import Hot Routes */
 import Routes from '../hot-routes'
@@ -9,7 +11,7 @@ import Routes from '../hot-routes'
 import TR from '../assets/fonts/Theinhardt-Regular.woff'
 import TB from '../assets/fonts/Theinhardt-Bold.woff'
 /* Import Stores Start */
-import BlueprintStore from 'Stores/Blueprint'
+import BlueprintReducer, { rootSaga } from '../ducks'
 
 // eslint-disable-next-line
 const global = css`
@@ -42,17 +44,20 @@ const global = css`
   }
 `
 
-const blueprintStore = BlueprintStore.create()
+const sagaMiddleware = createSagaMiddleware()
 
-/*
- * Init our store object, which is given to the provider
- */
-const store = {
-  blueprintStore,
-}
+const store = createStore(
+  BlueprintReducer,
+  compose(
+    window.devToolsExtension ? window.devToolsExtension() : f => f,
+    applyMiddleware(sagaMiddleware),
+  ),
+)
+
+sagaMiddleware.run(rootSaga)
 
 const App = () => (
-  <Provider {...store}>
+  <Provider store={store}>
     <>
       <Global styles={global} />
       <Router>

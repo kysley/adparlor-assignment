@@ -53,7 +53,6 @@ adparlor-assignment/
 ├── assets        # Static assets
 ├── components    # Reusable Components
 ├── pages         # A View (/[something]) built from components
-├── ducks         # Redux Store
 ├── styled        # CSS-in-JS (emotion) files
 └──────────────────────────────────────────────────────
 ```

@@ -8,7 +8,7 @@
   },
   "parser": "babel-eslint",
   "rules": {
-    "indent": ["error", 2],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
     "react/prefer-stateless-function": "warn",
     "react/sort-comp": [
       1,
@@ -30,7 +30,7 @@
     "react/forbid-prop-types": 0,
     "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
     "react/jsx-boolean-value": ["warn", "never"],
-    "react/jsx-closing-bracket-location": ["warn", "after-props"],
+
     "react/jsx-curly-spacing": ["warn", "never"],
     "react/jsx-first-prop-new-line": ["warn", "multiline"],
     "react/jsx-indent": ["warn", 2],
@@ -45,7 +45,6 @@
     "import/extensions": 0,
     "import/order": ["warn", {"newlines-between": "always"}],
     "semi": [2, "never" ],
-    // "operator-linebreak": ["error", "before"],
     "babel/object-curly-spacing": 0
   },
   "overrides": [

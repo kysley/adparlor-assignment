@@ -1,34 +1,40 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-
-import { loadBlueprints } from '../ducks'
+import ky from 'ky'
 
 import Card from 'Components/Card'
 import { BlueprintGrid } from 'Styled/Grids'
 
 /**
+ * Typically this is something that I would split into a constants helper
+ * but is this the only place we will need to use the URL..
+ */
+const API_URL = 'https://5c48812b4c918c001429ccd6.mockapi.io/v1/templates'
+
+/**
  * View page for the URL /library
  */
 
-const mapState = state => ({ ...state })
-
-const mapDispatch = dispatch => ({
-  fetchBlueprints() {
-    dispatch(loadBlueprints())
-  },
-})
-
 class Library extends React.Component {
-  state = { }
+  state = {
+    loading: false,
+    blueprints: [{}],
+  }
 
   componentDidMount() {
-    const { fetchBlueprints } = this.props
-    fetchBlueprints()
+    this.fetchBlueprints()
+  }
+
+  fetchBlueprints = async () => {
+    this.setState({ loading: true })
+    const blueprints = await ky(API_URL)
+      .then(res => res.json())
+      .then(data => data)
+
+    this.setState({ loading: false, blueprints })
   }
 
   render() {
-    const { loading, blueprints } = this.props
+    const { loading, blueprints } = this.state
     return (
       <BlueprintGrid>
         {!loading && blueprints.length > 0
@@ -49,10 +55,4 @@ class Library extends React.Component {
   }
 }
 
-export default connect(mapState, mapDispatch)(Library)
-
-Library.propTypes = {
-  loading: PropTypes.bool,
-  blueprints: PropTypes.array,
-  fetchBlueprints: PropTypes.shape({}),
-}
+export default Library

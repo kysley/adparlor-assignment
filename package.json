@@ -19,14 +19,14 @@
     "facepaint": "^1.2.1",
     "jwt-decode": "^2.2.0",
     "ky": "^0.7.0",
-    "mobx": "^5.8.0",
-    "mobx-react": "^5.4.3",
-    "mobx-state-tree": "^3.10.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-hot-loader": "^4.6.3",
-    "react-router-dom": "^4.3.1"
+    "react-redux": "^6.0.0",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-saga": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",

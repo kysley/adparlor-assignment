@@ -1,17 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Global, css } from '@emotion/core'
-import { Provider } from 'react-redux'
-import { createStore, compose, applyMiddleware } from 'redux'
-import createSagaMiddleware from 'redux-saga'
 
 /* Import Hot Routes */
 import Routes from '../hot-routes'
 /* Import Other  */
 import TR from '../assets/fonts/Theinhardt-Regular.woff'
 import TB from '../assets/fonts/Theinhardt-Bold.woff'
-/* Import Stores Start */
-import BlueprintReducer, { rootSaga } from '../ducks'
 
 // eslint-disable-next-line
 const global = css`
@@ -44,27 +39,13 @@ const global = css`
   }
 `
 
-const sagaMiddleware = createSagaMiddleware()
-
-const store = createStore(
-  BlueprintReducer,
-  compose(
-    window.devToolsExtension ? window.devToolsExtension() : f => f,
-    applyMiddleware(sagaMiddleware),
-  ),
-)
-
-sagaMiddleware.run(rootSaga)
-
 const App = () => (
-  <Provider store={store}>
-    <>
-      <Global styles={global} />
-      <Router>
-        <Routes />
-      </Router>
-    </>
-  </Provider>
+  <>
+    <Global styles={global} />
+    <Router>
+      <Routes />
+    </Router>
+  </>
 )
 
 export default App

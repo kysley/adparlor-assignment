@@ -6,6 +6,10 @@
 
 This repo contains the code for Adparlor's FEE Assignment
 
+I was going to host this on [Netlify](https://www.netlify.com) BUT [ky](https://github.com/sindresorhus/ky) doesn't support node 8.15 that Netlify runs :cry:
+
+`ky@0.7.0: The engine "node" is incompatible with this module. Expected version ">=10".`
+
 ## Docs
 - [Info](#Info)
 - [Codebase](#codebase)

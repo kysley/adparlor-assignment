@@ -19,7 +19,9 @@ This repo contains the code for Adparlor's FEE Assignment
 This specific branch was made using [Mobx-State-Tree](https://github.com/mobxjs/mobx-state-tree) for managing app state. 
 
 Other state managment implementations are branched.. Including:
-- placeholder
+- [Redux & Sagas](https://github.com/kysley/adparlor-assignment/tree/redux-impl)
+- [Vanilla State](https://github.com/kysley/adparlor-assignment/tree/vanilla-impl)
+- [React Hooks](https://github.com/kysley/adparlor-assignment/tree/hooks-impl)
 
 Note that all 'active' states, seen on _Blueprint_ and _Library_ text are hard coded using a `fakeActive` prop- as [React-Router](https://github.com/ReactTraining/react-router) @ 4.3.x `NavLink` component is bugged.
 It *should* be fixed when 4.4.x drops... but I'm not confident :unamused:

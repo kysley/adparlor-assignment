@@ -21,6 +21,7 @@ This specific branch was made using *nothing aside from react interals* for mana
 Other state managment implementations are branched.. Including:
 - [Mobx-State-Tree](https://github.com/kysley/adparlor-assignment/tree/master)
 - [Redux & Sagas](https://github.com/kysley/adparlor-assignment/tree/redux-impl)
+- [React Hooks](https://github.com/kysley/adparlor-assignment/tree/hooks-impl)
 
 Note that all 'active' states, seen on _Blueprint_ and _Library_ text are hard coded using a `fakeActive` prop- as [React-Router](https://github.com/ReactTraining/react-router) @ 4.3.x `NavLink` component is bugged.
 It *should* be fixed when 4.4.x drops... but I'm not confident :unamused:
@@ -50,7 +51,6 @@ adparlor-assignment/
 ├── assets        # Static assets
 ├── components    # Reusable Components
 ├── pages         # A View (/[something]) built from components
-├── ducks         # Redux Store
 ├── styled        # CSS-in-JS (emotion) files
 └──────────────────────────────────────────────────────
 ```

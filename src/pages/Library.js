@@ -43,3 +43,7 @@ class Library extends React.Component {
 }
 
 export default Library
+
+Library.propTypes = {
+  blueprintStore: PropTypes.shape({}),
+}

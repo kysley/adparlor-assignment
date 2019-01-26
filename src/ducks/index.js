@@ -1,9 +1,10 @@
 import ky from 'ky'
-
+// eslint wants an empty line here, probably due to the way redux-saga handles their importing
 import { call, put, takeEvery } from 'redux-saga/effects'
 
 const API_URL = 'https://5c48812b4c918c001429ccd6.mockapi.io/v1/templates'
 
+// Actions
 const GET_BLUEPRINTS = 'GET_BLUEPRINTS'
 const GET_BLUEPRINTS_SUCCESS = 'GET_BLUEPRINTS_SUCCESS'
 const GET_BLUEPRINTS_FAILURE = 'GET_BLUEPRINTS_FAILURE'
@@ -13,6 +14,7 @@ const initialState = {
   blueprints: [{}],
 }
 
+// Reducer
 export default (state = initialState, action = {}) => {
   switch (action.type) {
     case GET_BLUEPRINTS:
@@ -36,18 +38,17 @@ export default (state = initialState, action = {}) => {
   }
 }
 
+// Action Creators
 export const loadBlueprints = () => ({ type: GET_BLUEPRINTS })
 
-// export const recieveBlueprints = blueprints => (
-//   { type: GET_BLUEPRINTS_SUCCESS, blueprints }
-// )
-
+// Saga Helper
 export const fetchBlueprintsApi = () => (
   ky(API_URL)
     .then(res => res.json())
     .then(data => data)
 )
 
+// Saga
 export function* fetchBlueprints() {
   try {
     const blueprints = yield call(fetchBlueprintsApi)
@@ -57,6 +58,7 @@ export function* fetchBlueprints() {
   }
 }
 
+// Root Saga
 export function* rootSaga() {
   yield takeEvery('GET_BLUEPRINTS', fetchBlueprints)
 }

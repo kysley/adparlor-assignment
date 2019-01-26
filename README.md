@@ -16,10 +16,12 @@ This repo contains the code for Adparlor's FEE Assignment
 - [Running the app locally](#running-the-app-locally)
 
 ## Info
-This specific branch was made using [Mobx-State-Tree](https://github.com/mobxjs/mobx-state-tree) for managing app state. 
+This specific branch was made using [Redux](https://github.com/reduxjs/redux) and [Sagas](https://github.com/redux-saga/redux-saga) for managing app state.
+
+I followed the [Ducks](https://github.com/erikras/ducks-modular-redux) pattern while working through the implementation. I didn't bother to name the index file specifically as we are only working with that single store for this exercise.
 
 Other state managment implementations are branched.. Including:
-- placeholder
+- (Mobx-State-Tree)[https://github.com/kysley/adparlor-assignment/tree/master]
 
 Note that all 'active' states, seen on _Blueprint_ and _Library_ text are hard coded using a `fakeActive` prop- as [React-Router](https://github.com/ReactTraining/react-router) @ 4.3.x `NavLink` component is bugged.
 It *should* be fixed when 4.4.x drops... but I'm not confident :unamused:
@@ -29,7 +31,7 @@ It *should* be fixed when 4.4.x drops... but I'm not confident :unamused:
 - `prefer-default-export`: I always make sure there is a default export, but on the file that it's present on I added my reasoning in the top comment.
 
 If you want to look at a more advanced/fleshed out rendition of creating a design library feel free to take a look at my work over at [Scribe (styled directory)](https://github.com/withscribe/scribe/tree/next/src/styled)
-- `/system/` Contains awesome reusable primivites for the entire app 
+- `/system/` Contains awesome reusable primivites for the entire app
 - [The rest of the App](https://github.com/withscribe/scribe) is what myself & my amazing team created to rank as a finalist in our Capstone Competition. You should definitely check it out :wink:
 
 ## Codebase
@@ -40,17 +42,17 @@ List of other tech that is used
 - **ky**: Super small fetch wrapper
 - **React**: Frontend
 - **emotionJS**: CSS-in-JS
-- **mobx-state-tree**: State Managment
+- **redux+sagas**: State Managment
 
 
 #### Folder Structure
 ```
 adparlor-assignment/
-├── assets        # Static assets 
+├── assets        # Static assets
 ├── components    # Reusable Components
-├── pages         # A View (/[something]) built from components 
-├── stores        # MST Stories+Models
-├── styled        # CSS-in-JS (emotion) files  
+├── pages         # A View (/[something]) built from components
+├── ducks         # Redux Store
+├── styled        # CSS-in-JS (emotion) files
 └──────────────────────────────────────────────────────
 ```
 

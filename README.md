@@ -21,7 +21,7 @@ This specific branch was made using [Redux](https://github.com/reduxjs/redux) an
 I followed the [Ducks](https://github.com/erikras/ducks-modular-redux) pattern while working through the implementation. I didn't bother to name the index file specifically as we are only working with that single store for this exercise.
 
 Other state managment implementations are branched.. Including:
-- (Mobx-State-Tree)[https://github.com/kysley/adparlor-assignment/tree/master]
+- [Mobx-State-Tree](https://github.com/kysley/adparlor-assignment/tree/master)
 
 Note that all 'active' states, seen on _Blueprint_ and _Library_ text are hard coded using a `fakeActive` prop- as [React-Router](https://github.com/ReactTraining/react-router) @ 4.3.x `NavLink` component is bugged.
 It *should* be fixed when 4.4.x drops... but I'm not confident :unamused:

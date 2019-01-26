@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import ky from 'ky'
 
 import Card from 'Components/Card'
@@ -14,45 +14,37 @@ const API_URL = 'https://5c48812b4c918c001429ccd6.mockapi.io/v1/templates'
  * View page for the URL /library
  */
 
-class Library extends React.Component {
-  state = {
-    loading: false,
-    blueprints: [{}],
-  }
+const Library = () => {
+  const [data, setData] = useState([{}])
 
-  componentDidMount() {
-    this.fetchBlueprints()
-  }
-
-  fetchBlueprints = async () => {
-    this.setState({ loading: true })
+  const fetchBlueprints = async () => {
     const blueprints = await ky(API_URL)
       .then(res => res.json())
-      .then(data => data)
-
-    this.setState({ loading: false, blueprints })
+      .then(json => json)
+    setData(blueprints)
   }
 
-  render() {
-    const { loading, blueprints } = this.state
-    return (
-      <BlueprintGrid>
-        {!loading && blueprints.length > 0
-          ? (
-            <>
-              {blueprints.map(bp => (
-                <Card key={bp.type} info={bp} />
-              ))}
-              <Card empty />
-            </>
-          )
-          : (
-            <span>Loading...</span>
-          )
-        }
-      </BlueprintGrid>
-    )
-  }
+  useEffect(() => {
+    fetchBlueprints()
+  }, [])
+
+  return (
+    <BlueprintGrid>
+      {data.length >= 2
+        ? (
+          <>
+            {data.map(bp => (
+              <Card key={bp.type} info={bp} />
+            ))}
+            <Card empty />
+          </>
+        )
+        : (
+          <span>Loading...</span>
+        )
+      }
+    </BlueprintGrid>
+  )
 }
 
 export default Library

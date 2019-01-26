@@ -18,7 +18,7 @@ This repo contains the code for Adparlor's FEE Assignment
 ## Info
 This specific branch was made using *nothing aside from react interals* for managing app state. :flushed:
 
-But this is better... We used Hooks! :chains: using react@16.8.0-alpha.1
+But this is better... We used (Hooks!)[https://reactjs.org/docs/hooks-intro.html] :chains: using react@16.8.0-alpha.1
 
 Other state managment implementations are branched.. Including:
 - [Mobx-State-Tree](https://github.com/kysley/adparlor-assignment/tree/master)

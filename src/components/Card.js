@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 /**
  * Card component that is composed of Styled/Card components
@@ -38,3 +39,8 @@ const Card = ({ info, empty }) => (
 )
 
 export default Card
+
+Card.propTypes = {
+  info: PropTypes.shape({}),
+  empty: PropTypes.bool,
+}

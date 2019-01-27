@@ -10,6 +10,9 @@ I was going to host this on [Netlify](https://www.netlify.com) BUT [ky](https://
 
 `ky@0.7.0: The engine "node" is incompatible with this module. Expected version ">=10".`
 
+
+## :exclamation: Note(s) :exclamation:
+- Commits [Chore: Clean up Cards](https://github.com/kysley/adparlor-assignment/commit/08012625c6500ea3e69770089006d8f2745c4740) and [Fix: trouble with images scaling properly](https://github.com/kysley/adparlor-assignment/commit/22c855f42b475ffdd441e8f62902eea3b9ffdc09) have **ONLY** been pushed to this branch!
 ## Docs
 - [Info](#Info)
 - [Codebase](#codebase)

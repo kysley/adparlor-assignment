@@ -13,6 +13,9 @@ const sharedCardStyles = css`
   flex-direction: column;
   background-color: #fff;
   color: #666666;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
 `
 
 const defaultCardStyles = css`
@@ -30,6 +33,10 @@ const EmptyCardText = styled.h3`
   font-family: Theinhardt-Bold;
   font-size: 1rem;
   margin: 0;
+`
+
+const EmptyCardMeta = styled.span`
+  font-size: 3rem;
 `
 
 const CardWrapper = styled.div`
@@ -57,6 +64,8 @@ const CardName = styled.h3`
   font-family: Theinhardt-Bold;
   font-size: 1rem;
   margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `
 
 const CardMeta = styled.span`
@@ -71,4 +80,5 @@ export {
   CardName,
   CardMeta,
   EmptyCardText,
+  EmptyCardMeta,
 }

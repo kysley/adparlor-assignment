@@ -14,6 +14,7 @@ import CardWrapper,
   CardMeta,
   CardMetaWrapper,
   EmptyCardText,
+  EmptyCardMeta,
 } from 'Styled/Card'
 
 const Card = ({ info, empty }) => (
@@ -21,7 +22,7 @@ const Card = ({ info, empty }) => (
     {empty
       ? (
         <CardWrapper empty>
-          <EmptyCardText>+</EmptyCardText>
+          <EmptyCardMeta>+</EmptyCardMeta>
           <EmptyCardText>Custom Blueprint</EmptyCardText>
         </CardWrapper>
       ) : (

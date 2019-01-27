@@ -9,6 +9,7 @@ import React from 'react'
 
 import CardWrapper,
 {
+  CardImageContainer,
   CardImage,
   CardName,
   CardMeta,
@@ -27,7 +28,9 @@ const Card = ({ info, empty }) => (
         </CardWrapper>
       ) : (
         <CardWrapper>
-          <CardImage src={info.imageUrl} />
+          <CardImageContainer>
+            <CardImage src={info.imageUrl} />
+          </CardImageContainer>
           <CardMetaWrapper>
             <CardName>{info.name}</CardName>
             <CardMeta>All Ad Sizes</CardMeta>

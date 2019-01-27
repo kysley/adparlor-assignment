@@ -46,15 +46,22 @@ const CardWrapper = styled.div`
 
 const CardMetaWrapper = styled.div`
   padding: .5rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  height: 100%;
   justify-content: center;
+`
+
+const CardImageContainer = styled.div`
+  width: 100%;
+  min-height: 70%;
+  max-height: 70%;
+  overflow: hidden;
 `
 
 const CardImage = styled.img`
   width: 100%;
-  height: 70%;
+  height: auto;
   border-radius: 6px 6px 0 0;
   background-repeat: no-repeat;
   background-size: contain;
@@ -76,6 +83,7 @@ export default CardWrapper
 
 export {
   CardMetaWrapper,
+  CardImageContainer,
   CardImage,
   CardName,
   CardMeta,
